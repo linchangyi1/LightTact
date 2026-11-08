@@ -1,0 +1,19 @@
+# Camera index from v4l2-ctl --list-devices (or a device path).
+camera:
+  device: 4
+  resolution: [960, 540] # width, height
+  fps: 30
+  reference_frames: 10
+
+# Paths are relative to this config file, regardless of the working directory.
+calibration_file: calibration.npz
+
+calibration:
+  roi_y: [255, 470] # start row inclusive, end row exclusive
+  grid: [5, 5] # rows, columns of dots
+  spacing_mm: [3.0, 3.0] # row spacing, column spacing
+  margin_mm: [1.0, 0.2] # each vertical side, each horizontal side
+  thresholds: [80, 60, 40] # one, two, or three bright color channels
+
+contact:
+  thresholds: [40, 30, 20] # runtime sensitivity; independent of calibration
